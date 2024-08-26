@@ -1,11 +1,13 @@
 const express = require('express');
-const app = express();
+const config = require('./configs/configengine');
+const route = require('./routes/index.route');
 const port = 3000;
+const app = express();
 
-app.get('/home', (req, res) => {
-    res.send("hello_world")
-});
+config(app);
+
+route(app);
 
 app.listen(port, () => {
-    console.log(`http://localhost:${3000}/home`)
+    console.log(`http://localhost:${3000}/admin`)
 });
