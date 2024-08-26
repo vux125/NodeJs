@@ -1,9 +1,9 @@
 module.exports = {
     mutipleToObject: function (courses) {
-        return courses.map(courses => courses.toObject());
+        return courses.map(course => course.toObject());
     },
 
     courseToObject: function (course) {
-        return course.toObject();
+        return course ? course.toObject() : course;
     },
 }
